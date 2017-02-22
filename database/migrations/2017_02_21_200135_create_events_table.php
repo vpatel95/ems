@@ -14,7 +14,7 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->integer('e_id')->primary();
+            $table->integer('id')->primary();
             $table->string('name');
             $table->string('type');
             $table->string('sub_type');
@@ -27,8 +27,8 @@ class CreateEventsTable extends Migration
         });
 
         Schema::table('events', function(Blueprint $table) {
-            $table->foreign('c_id')->references('m_id')->on('users');
-            $table->foreign('h_id')->references('h_id')->on('hods');
+            $table->foreign('c_id')->references('id')->on('users');
+            $table->foreign('h_id')->references('id')->on('hods');
         });
     }
 

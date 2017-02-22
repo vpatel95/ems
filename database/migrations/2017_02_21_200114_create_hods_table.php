@@ -14,7 +14,7 @@ class CreateHodsTable extends Migration
     public function up()
     {
         Schema::create('hods', function (Blueprint $table) {
-            $table->integer('h_id')->primary();
+            $table->integer('id')->primary();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('name');
