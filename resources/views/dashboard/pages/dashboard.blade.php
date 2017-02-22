@@ -88,7 +88,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="user_profile.html">Profile</a></li>
 							<li><a href="javascript:void(0)">Another action</a></li>
-							<li><a href="{{ route('logout	') }}">Log Out</a></li>
+							<li><a href="{{ route('logout') }}">Log Out</a></li>
 						</ul>
 					</div>
 				</div>
