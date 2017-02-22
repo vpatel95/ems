@@ -26,7 +26,7 @@ Route::group(['middleware' => ['web']], function() {
 		'as' => 'login'
 	]);
 
-	Route::post('/register', [
+	Route::any('/register', [
 		'uses' => 'LoginController@register',
 		'as' => 'register'
 	]);

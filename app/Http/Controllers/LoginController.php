@@ -33,9 +33,9 @@ class LoginController extends Controller {
 
     	$user->save();
 
-    	Auth::login($user);
-    	$user = Auth::user();
-    	return redirect()->route('dashboard');
+    	if(Auth::attempt(['email' => $email, 'password' => $password])){
+            return redirect()->route('dashboard');
+        }
     }
 
     public function login(Request $request) {
