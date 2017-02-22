@@ -82,13 +82,13 @@
 				<div class="col-xs-6 col-sm-push-4 col-sm-3">
 					<div class="pull-right dropdown">
 						<a href="#" class="user_info dropdown-toggle" title="Jonathan Hay" data-toggle="dropdown">
-							<a href="#">{{ $user->name }}</a>
+							{{ $user->name }}
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li><a href="user_profile.html">Profile</a></li>
 							<li><a href="javascript:void(0)">Another action</a></li>
-							<li><a href="login_page.html">Log Out</a></li>
+							<li><a href="{{ route('logout') }}">Log Out</a></li>
 						</ul>
 					</div>
 				</div>
