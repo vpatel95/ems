@@ -35,7 +35,7 @@ class LoginController extends Controller {
 
     	Auth::login($user);
     	$user = Auth::user();
-    	return redirect()->route('welcome', ['user' => $user]);
+    	return view('welcome.pages.welcome', ['user' => $user]);
     }
 
     public function login(Request $request) {
@@ -48,10 +48,15 @@ class LoginController extends Controller {
     	$password = $request['password'];
 
     	if(Auth::attempt(['email' => $email, 'password' => $password])){
-    		$user = Auth::user();
-    		return redirect()->route('welcome', ['user' => $user]);
+    		return view('welcome.pages.welcome', ['user' => Auth::user()]);
     	}
 
     	return redirect()->back();
+    }
+
+    public function logout() {
+    	Auth::logout();
+
+    	return redirect()->route('welcome');
     }
 }

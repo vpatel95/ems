@@ -42,6 +42,15 @@
 					<small>Not registered? <a class="form_toggle" href="#reg_form"> Sign up here</a></small>
 				</div>
 			</form>
+			@if (count($errors) > 0)
+			    <div class="alert alert-danger">
+			        <ul>
+			            @foreach ($errors->all() as $error)
+			                <li>{{ $error }}</li>
+			            @endforeach
+			        </ul>
+			    </div>
+			@endif
 		</div>
 		<div class="login_panel reg_section" style="display:none">
 			<div class="login_head">
@@ -80,6 +89,15 @@
 					<small>Never mind, <a class="form_toggle" href="#login_form">send me back to the sign-in screen</a></small>
 				</div>
 			</form>
+			@if (count($errors) > 0)
+			    <div class="alert alert-danger">
+			        <ul>
+			            @foreach ($errors->all() as $error)
+			                <li>{{ $error }}</li>
+			            @endforeach
+			        </ul>
+			    </div>
+			@endif
 		</div>
 	</div>
 @endsection

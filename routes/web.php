@@ -14,7 +14,7 @@
 Route::group(['middleware' => ['web']], function() {
 	
 	Route::get('/', function () {
-	    return view('welcome');
+	    return view('welcome.pages.welcome');
 	})->name('welcome');
 
 	Route::get('/home', function() {
@@ -29,5 +29,10 @@ Route::group(['middleware' => ['web']], function() {
 	Route::post('/register', [
 		'uses' => 'LoginController@register',
 		'as' => 'register'
+	]);
+
+	Route::get('/logout', [
+		'uses' => 'LoginController@logout',
+		'as' => 'logout'
 	]);
 });
