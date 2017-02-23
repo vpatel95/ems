@@ -82,7 +82,7 @@
 				<div class="col-xs-6 col-sm-push-4 col-sm-3">
 					<div class="pull-right dropdown">
 						<a href="#" class="user_info dropdown-toggle" title="Jonathan Hay" data-toggle="dropdown">
-							{{ $user->name }}
+							{{ $member->name }}
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
@@ -125,34 +125,41 @@
 					<div class="col-lg-3 col-md-6">
 						<div class="box_stat box_ico">
 							<span class="stat_ico stat_ico_1"><i class="li_vallet"></i></span>
-							<h4>1 045$</h4>
-							<small>Sale (7 days)</small>
+							<h4>Events</h4>
+							<small>123 Events</small>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="box_stat box_ico">
 							<span class="stat_ico stat_ico_2"><i class="li_user"></i></span>
-							<h4>865</h4>
-							<small>New Users (24h)</small>
+							<h4>Members</h4>
+							<small>1234 Members</small>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="box_stat box_ico">
-							<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-							<h4>10 327&euro;</h4>
-							<small>Sale (June)</small>
+					@if ($user->role == 2)
+						<a href="#">
+							<div class="col-lg-3 col-md-6">
+								<div class="box_stat box_ico">
+									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
+									<h4>Create Event</h4>
+									<small></small>
 								</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="box_stat box_ico">
-							<span class="stat_ico stat_ico_4"><i class="li_truck"></i></span>
-							<h4>135</h4>
-							<small>Orders (24h)</small>
-						</div>
-					</div>
+							</div>
+						</a>
+					@elseif ($user->role == 1)
+						<a href="#">
+							<div class="col-lg-3 col-md-6">
+								<div class="box_stat box_ico">
+									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
+									<h4>Edit Events</h4>
+									<small></small>
+								</div>
+							</div>
+						</a>
+					@endif
 				</div>
 				
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-sm-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -280,7 +287,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> 
 				
 				<div class="row">
 					<div class="col-sm-12">
@@ -314,7 +321,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				
 				<div class="row">
 					<div class="col-sm-12">
@@ -344,39 +351,6 @@
 				
 				<div class="row">
 					<div class="col-sm-6">
-						<div class="box_user">
-							<div class="box_user_main">
-								<img class="img-thumbnail pull-left" alt="" src="img/user_avatar_lg.png">
-								<div class="box_user_info">
-									<h2 class="box_user_name">John Smith</h2>
-									<p><span class="icon-map-marker"></span> West Thaddeusfurt, Netherlands</p>
-									<p><span class="icon-skype"></span> john_smith</p>
-								</div>
-							</div>
-							<ul class="box_user_stats">
-								<li><span>34</span> Followers</li>
-								<li><span>221</span> Comments</li>
-								<li><span>73</span> Videos</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">Featured Video</h4>
-							</div>
-							<div class="panel-body panel-body-narrow">
-								<div class="fit_vid sepH_a">
-									<iframe src="http://player.vimeo.com/video/53914149?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=808080" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-								</div>
-								<a href="http://vimeo.com/53914149" class="text-muted"><small>Cheetahs on the Edge--Director's Cut</small></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-sm-7">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">Social Networks (7 days)</h4>
@@ -425,37 +399,28 @@
 									</div>
 								</div>
 							</div>
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th>Social Network</th>
-										<th class="col_small col_center">Visits</th>
-										<th class="col_small col_center">Pageviews</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><a href="#">Twitter</a></td>
-										<td class="col_center">423</td>
-										<td class="col_center">631</td>
-									</tr>
-									<tr>
-										<td><a href="#">Google+</a></td>
-										<td class="col_center">316</td>
-										<td class="col_center">549</td>
-									</tr>
-									<tr>
-										<td><a href="#">LinkedIn</a></td>
-										<td class="col_center">264</td>
-										<td class="col_center">388</td>
-									</tr>
-									<tr>
-										<td><a href="#">Facebook</a></td>
-										<td class="col_center">152</td>
-										<td class="col_center">274</td>
-									</tr>
-								</tbody>
-							</table>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">Featured Video</h4>
+							</div>
+							<div class="panel-body panel-body-narrow">
+								<div class="fit_vid sepH_a">
+									<iframe src="http://player.vimeo.com/video/53914149?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=808080" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+								</div>
+								<a href="http://vimeo.com/53914149" class="text-muted"><small>Cheetahs on the Edge--Director's Cut</small></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-7">
+						<div class="panel panel-default">
+							<div class="panel-heading"></div>
+							<div id="ebro_cal"></div>
 						</div>
 					</div>
 					
@@ -515,37 +480,6 @@
 									</tr>
 								</tbody>
 							</table>
-						</div>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">Todo List</h4>
-							</div>
-							<div class="todo-list">
-								<h4>Personal</h4>
-								<ul class="connectedSortable">
-									<li class="high-pr"><input type="checkbox" class="todo-check"> Buy groceries</li>
-									<li class="low-pr completed"><input type="checkbox" checked class="todo-check"> Do laundry</li>
-									<li class="low-pr"><input type="checkbox" class="todo-check"> Meeting with Macy</li>
-									<li class="high-pr"><input type="checkbox" class="todo-check"> Pick up kids</li>
-								</ul>
-								<h4>Work</h4>
-								<ul class="connectedSortable">
-									<li class="medium-pr"><input type="checkbox" class="todo-check"> Send press releases</li>
-									<li class="low-pr"><input type="checkbox" class="todo-check"> Buy books</li>
-									<li class="high-pr completed"><input type="checkbox" checked class="todo-check"> Update main site</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-8">
-						<div class="panel panel-default">
-							<div class="panel-heading"></div>
-							<div id="ebro_cal"></div>
 						</div>
 					</div>
 				</div>

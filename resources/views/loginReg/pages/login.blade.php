@@ -78,7 +78,7 @@
 					<input type="password" id="password" name="password" class="form-control input-lg">
 				</div>
 				<div class="form-group">
-					<label for="re_password">Password</label>
+					<label for="re_password">Retype Password</label>
 					<input type="password" id="re_password" name="re_password" class="form-control input-lg">
 				</div>
 				<div class="login_submit">

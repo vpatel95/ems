@@ -27,8 +27,8 @@ class CreateEventsTable extends Migration
         });
 
         Schema::table('events', function(Blueprint $table) {
-            $table->foreign('c_id')->references('id')->on('users');
-            $table->foreign('h_id')->references('id')->on('hods');
+            $table->foreign('c_id')->references('c_id')->on('coordinators');
+            $table->foreign('h_id')->references('h_id')->on('hods');
         });
     }
 

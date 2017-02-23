@@ -17,22 +17,10 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
     return [
     	'id' => $faker->unique()->randomNumber($nbDigits = 6),
-        'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'dept' => 'CSE',
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+        'role' => $faker->numberBetween($min = 0, $max = 2),
     ];
 });
 
-$factory->define(App\Hod::class, function (Faker\Generator $faker) {
-	static $password;
-
-    return [
-    	'id' => $faker->unique()->randomNumber($nbDigits = 6),
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'dept' => str_random(3),
-        'password' => $password ?: $password = bcrypt('secret'),
-    ];
-});

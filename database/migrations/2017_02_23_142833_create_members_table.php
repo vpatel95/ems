@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHodsTable extends Migration
+class CreateMembersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateHodsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hods', function (Blueprint $table) {
-            $table->integer('id')->primary();
-            $table->string('email')->unique();
-            $table->string('password');
+        Schema::create('members', function (Blueprint $table) {
+            $table->integer('m_id')->primary();
             $table->string('name');
             $table->string('dept');
             $table->timestamps();
+        });
+
+        Schema::table('members', function(Blueprint $table) {
+            $table->foreign('m_id')->references('id')->on('users');
         });
     }
 
@@ -30,6 +32,6 @@ class CreateHodsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hods');
+        Schema::dropIfExists('members');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,16 +23,26 @@ class LoginController extends Controller {
     	$dept = $request['dept'];
     	$email = $request['email'];
     	$password = $request['password'];
+        $role = 0;
 
+        //New User Entry
     	$user = new User();
 
     	$user->id = $id;
-    	$user->name = $name;
     	$user->email = $email;
-    	$user->dept = $dept;
     	$user->password = bcrypt($password);
+        $user->role = $role;
 
-    	$user->save();
+        $user->save();
+
+        //Enter the user in Member
+        $member = new Member();
+
+        $member->m_id = $id;
+        $member->name = $name;
+        $member->dept = $dept;
+
+        $member->save();
 
     	if(Auth::attempt(['email' => $email, 'password' => $password])){
             return redirect()->route('dashboard');
@@ -62,6 +73,10 @@ class LoginController extends Controller {
 
     public function getDashboard() {
         $user = Auth::user();
-        return view('dashboard.pages.dashboard', ['user' => $user]);
+        $member = User::find($user->id)->member;
+        return view('dashboard.pages.dashboard', [
+            'member' => $member,
+            'user' => $user
+        ]);
     }
 }
