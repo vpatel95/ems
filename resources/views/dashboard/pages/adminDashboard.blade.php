@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-6 col-sm-2">
-					<a href="dashboard1.html" class="logo_main" title="Ebro Admin Template:"><img src="img/logo_main.png" alt=""></a>
+					<a href="dashboard1.html" class="logo_main" title="Ebro Admin Template:"><img src="{{ URL::to('img/logo_main.png') }}" alt=""></a>
 				</div>
 				<div class="col-sm-push-4 col-sm-3 text-right hidden-xs">
 					<div class="notification_dropdown dropdown">
@@ -82,7 +82,7 @@
 				<div class="col-xs-6 col-sm-push-4 col-sm-3">
 					<div class="pull-right dropdown">
 						<a href="#" class="user_info dropdown-toggle" title="Jonathan Hay" data-toggle="dropdown">
-							{{ $user->name }}
+							{{ $admin->name }}
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
@@ -136,27 +136,24 @@
 							<small>1234 Members</small>
 						</div>
 					</div>
-					@if ($role == 2)
-						<a href="#">
-							<div class="col-lg-3 col-md-6">
-								<div class="box_stat box_ico">
-									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-									<h4>Create Event</h4>
-									<small></small>
-								</div>
+					<a href="{{ route('admin.hod') }}">
+						<div class="col-lg-3 col-md-6">
+							<div class="box_stat box_ico">
+								<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
+								<h4>Add HOD</h4>
+								<small></small>
 							</div>
-						</a>
-					@elseif ($role == 1)
-						<a href="#">
-							<div class="col-lg-3 col-md-6">
-								<div class="box_stat box_ico">
-									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-									<h4>Edit Events</h4>
-									<small></small>
-								</div>
+						</div>
+					</a>
+					<a href="">
+						<div class="col-lg-3 col-md-6">
+							<div class="box_stat box_ico">
+								<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
+								<h4>Add Admin</h4>
+								<small></small>
 							</div>
-						</a>
-					@endif
+						</div>
+					</a>
 				</div>
 				
 				<!-- <div class="row">
@@ -226,14 +223,14 @@
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="box_stat box_pos">
-							<img src="img/blank.png" alt="" class="img_ind">
+							<img src="{{ URL::to('img/blank.png') }}" alt="" class="img_ind">
 							<h4>1 045$</h4>
 							<small>Sale (7 days)</small>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="box_stat box_neg">
-							<img src="img/blank.png" alt="" class="img_ind">
+							<img src="{{ URL::to('img/blank.png') }}" alt="" class="img_ind">
 							<h4>865</h4>
 							<small>New Users (24h)</small>
 						</div>
@@ -331,18 +328,18 @@
 							</div>
 							<div class="panel-body panel-body-narrow">
 								<div class="photo-carousel">
-									<a class="item gal_lightbox" href="gallery/Image01.jpg"><img src="gallery/ex_width/Image01_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image02.jpg"><img src="gallery/ex_width/Image02_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image03.jpg"><img src="gallery/ex_width/Image03_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image04.jpg"><img src="gallery/ex_width/Image04_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image05.jpg"><img src="gallery/ex_width/Image05_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image06.jpg"><img src="gallery/ex_width/Image06_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image07.jpg"><img src="gallery/ex_width/Image07_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image08.jpg"><img src="gallery/ex_width/Image08_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image09.jpg"><img src="gallery/ex_width/Image09_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image10.jpg"><img src="gallery/ex_width/Image10_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image11.jpg"><img src="gallery/ex_width/Image11_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image12.jpg"><img src="gallery/ex_width/Image12_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image01.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image01_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image02.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image02_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image03.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image03_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image04.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image04_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image05.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image05_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image06.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image06_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image07.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image07_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image08.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image08_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image09.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image09_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image10.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image10_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image11.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image11_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image12.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image12_tn.jpg') }}" alt=""></a>
 								</div>
 							</div>
 						</div>

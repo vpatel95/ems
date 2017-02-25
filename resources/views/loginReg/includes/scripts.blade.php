@@ -1,7 +1,7 @@
-<script src="js/jquery.min.js"></script>
+<script src="{{ URL::to('js/jquery.min.js') }}"></script>
 <!-- jquery cookie -->
-<script src="js/jquery_cookie.min.js"></script>
-<script src="js/lib/parsley/parsley.min.js"></script>
+<script src="{{ URL::to('js/jquery_cookie.min.js') }}"></script>
+<script src="{{ URL::to('js/lib/parsley/parsley.min.js') }}"></script>
 <script>
 	$(function() {		
 		//* validation

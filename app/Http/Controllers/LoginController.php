@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Member;
+use App\Hod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,6 @@ class LoginController extends Controller {
     	$dept = $request['dept'];
     	$email = $request['email'];
     	$password = $request['password'];
-        $role = 0;
 
         //New User Entry
     	$user = new User();
@@ -31,8 +31,6 @@ class LoginController extends Controller {
     	$user->id = $id;
     	$user->email = $email;
     	$user->password = bcrypt($password);
-        $user->role = $role;
-
         $user->save();
 
         //Enter the user in Member
@@ -72,11 +70,15 @@ class LoginController extends Controller {
     }
 
     public function getDashboard() {
-        $user = Auth::user();
-        $member = User::find($user->id)->member;
+        $role = Auth::user()->role;
+        if($role == 0) {
+            $user = User::find(Auth::user()->id)->member;
+        } elseif($role == 2) {
+            $user = User::find(Auth::user()->id)->hod;
+        }
         return view('dashboard.pages.dashboard', [
-            'member' => $member,
-            'user' => $user
+            'user' => $user,
+            'role' => $role
         ]);
     }
 }

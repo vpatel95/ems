@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function member() {
         return $this->hasOne('App\Member', 'm_id');
     }
+
+    public function hod() {
+        return $this->hasOne('App\Hod', 'h_id');
+    }
 }

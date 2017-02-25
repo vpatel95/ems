@@ -9,4 +9,5 @@ class Coordinator extends Model
     public function event() {
     	return $this->hasMany('App\Event', 'c_id');
     }
+    
 }

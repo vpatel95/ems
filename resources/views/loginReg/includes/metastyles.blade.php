@@ -1,11 +1,11 @@
 <meta charset="UTF-8">
 <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/todc-bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/theme/color_1.css" id="theme">
+<link rel="stylesheet" href="{{ URL::to('bootstrap/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ URL::to('css/todc-bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
+<link rel="stylesheet" href="{{ URL::to('css/theme/color_1.css') }}" id="theme">
 <link href='http://fonts.googleapis.com/css?family=Roboto:300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="{{ URL::to('favicon.ico') }}">
 <style>
 	body {
 		padding:80px 0 0
