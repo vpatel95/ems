@@ -1,6 +1,6 @@
 @extends('loginReg.layouts.master')
 
-@section('title', 'Welcome to EMS')
+@section('title', 'Welcome to EMS Admin')
 
 @section('content')
 	<div class="login_wrapper">
