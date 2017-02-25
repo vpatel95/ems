@@ -21,6 +21,9 @@
 					<button class="btn btn-primary btn-block btn-lg">Log In</button>
 					<input type="hidden" name="_token" value="{{ Session::token() }}">
 				</div>
+				<div class="text-center">
+					<small>Not registered? <a class="form_toggle" href="#reg_form"> Sign up here</a></small>
+				</div>
 			</form>
 			@if (count($errors) > 0)
 			    <div class="alert alert-danger">
