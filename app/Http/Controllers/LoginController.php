@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller {
-    
+
     public function register(Request $request) {
     	$this->validate($request, [
     		'name' => 'required|string',
@@ -49,7 +49,7 @@ class LoginController extends Controller {
 
     public function login(Request $request) {
     	$this->validate($request, [
-    		'email' => 'required',
+    		'email' => 'required|email|exists:users',
     		'password' => 'required'
     	]);
 
@@ -64,8 +64,7 @@ class LoginController extends Controller {
     }
 
     public function logout() {
-    	Auth::logout();
-
+        Auth::logout();
     	return redirect()->route('welcome');
     }
 

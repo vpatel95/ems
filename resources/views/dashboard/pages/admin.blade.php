@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-6 col-sm-2">
-					<a href="dashboard1.html" class="logo_main" title="Ebro Admin Template:"><img src="{{ URL::to('img/logo_main.png') }}" alt=""></a>
+					<a href="dashboard1.html" class="logo_main" title="Ebro Admin Template:"><img src="img/logo_main.png" alt=""></a>
 				</div>
 				<div class="col-sm-push-4 col-sm-3 text-right hidden-xs">
 					<div class="notification_dropdown dropdown">
@@ -82,13 +82,12 @@
 				<div class="col-xs-6 col-sm-push-4 col-sm-3">
 					<div class="pull-right dropdown">
 						<a href="#" class="user_info dropdown-toggle" title="Jonathan Hay" data-toggle="dropdown">
-							{{ $admin->name }}
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li><a href="user_profile.html">Profile</a></li>
 							<li><a href="javascript:void(0)">Another action</a></li>
-							<li><a href="{{ route('logout') }}">Log Out</a></li>
+							<li><a href="{{ route('admin.logout') }}">Log Out</a></li>
 						</ul>
 					</div>
 				</div>
@@ -136,189 +135,28 @@
 							<small>1234 Members</small>
 						</div>
 					</div>
-					<a href="{{ route('admin.hod') }}">
-						<div class="col-lg-3 col-md-6">
-							<div class="box_stat box_ico">
-								<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-								<h4>Add HOD</h4>
-								<small></small>
-							</div>
-						</div>
-					</a>
-					<a href="">
-						<div class="col-lg-3 col-md-6">
-							<div class="box_stat box_ico">
-								<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-								<h4>Add Admin</h4>
-								<small></small>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<!-- <div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">Locations</h4>
-							</div>
-							<div class="panel-body">
-								<div class="row">
-									<div class="col-sm-8">
-										<div id="world_map_vector" style="width:100%;height:300px">
-											<script>
-												countries_data = {
-													"US": 2320,
-													"BR": 1945,
-													"IN": 1779,
-													"AU": 1486,
-													"TR": 1024,
-													"CN": 753
-												};  
-											</script>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<table class="table table-striped">
-											<thead>
-												<tr>
-													<th>Country</th>
-													<th class="col_small col_center">Visits</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td><a href="#">United States</a></td>
-													<td class="col_center">2320</td>
-												</tr>
-												<tr>
-													<td><a href="#">Brazil</a></td>
-													<td class="col_center">1945</td>
-												</tr>
-												<tr>
-													<td><a href="#">India</a></td>
-													<td class="col_center">1779</td>
-												</tr>
-												<tr>
-													<td><a href="#">Australia</a></td>
-													<td class="col_center">1486</td>
-												</tr>
-												<tr>
-													<td><a href="#">Turkey</a></td>
-													<td class="col_center">1024</td>
-												</tr>
-												<tr>
-													<td><a href="#">China</a></td>
-													<td class="col_center">753</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+					
+						<a href="#">
+							<div class="col-lg-3 col-md-6">
+								<div class="box_stat box_ico">
+									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
+									<h4>Create Event</h4>
+									<small></small>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="box_stat box_pos">
-							<img src="{{ URL::to('img/blank.png') }}" alt="" class="img_ind">
-							<h4>1 045$</h4>
-							<small>Sale (7 days)</small>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="box_stat box_neg">
-							<img src="{{ URL::to('img/blank.png') }}" alt="" class="img_ind">
-							<h4>865</h4>
-							<small>New Users (24h)</small>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="box_stat peity_chart">
-							<div class="peity_wrapper">
-								<div class="peity_bar_up">2,5,3,6,8,5</div>
-							</div>
-							<h4>10 327&euro;</h4>
-							<small>Sale (June)</small>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="box_stat peity_chart">
-							<div class="peity_wrapper">
-								<div class="peity_bar_down">9,6,7,4,6,3</div>
-							</div>
-							<h4>135</h4>
-							<small>Orders (24h)</small>
-						</div>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="box_stat_circular">
-							<div class="box_stat_circular_a color_a">
-								<h4>865</h4>
-								<small>New Users (24h)</small>
-							</div>
-							<div class="box_stat_circular_middle">
-								<div class="easy_chart easy_chart_a" data-percent="42"><i class="glyphicon glyphicon-user"></i></div>
-							</div>
-							<div class="box_stat_circular_b">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci&hellip;</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="box_stat_circular">
-							<div class="box_stat_circular_a color_b">
-								<h4>1 356</h4>
-								<small>Orders (24h)</small>
-							</div>
-							<div class="box_stat_circular_middle">
-								<div class="easy_chart easy_chart_b" data-percent="70"><span>+70%</span></div>
-							</div>
-							<div class="box_stat_circular_b">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci possimus&hellip;</p>
-							</div>
-						</div>
-					</div>
-				</div> 
-				
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">Overview</h4>
-							</div>
-							<div class="chart_wrapper">
-								<div class="chart_wrapper">
-									<div id="flot_overview" class="chart_b">
-										<script>
-											data_new_visits = [
-												[new Date('08/02/2012').getTime(),1148],
-												[new Date('08/03/2012').getTime(),920],
-												[new Date('08/04/2012').getTime(),623],
-												[new Date('08/05/2012').getTime(),701],
-												[new Date('08/06/2012').getTime(),502],
-												[new Date('08/07/2012').getTime(),1472],
-												[new Date('08/08/2012').getTime(),1273],
-												[new Date('08/09/2012').getTime(),782],
-												[new Date('08/10/2012').getTime(),410],
-												[new Date('08/11/2012').getTime(),893],
-												[new Date('08/12/2012').getTime(),774],
-												[new Date('08/13/2012').getTime(),621],
-												[new Date('08/14/2012').getTime(),373],
-												[new Date('08/15/2012').getTime(),420]
-											];
-										</script>
-									</div>
+						</a>
+					
+						<a href="#">
+							<div class="col-lg-3 col-md-6">
+								<div class="box_stat box_ico">
+									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
+									<h4>Edit Events</h4>
+									<small></small>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div> -->
+						</a>
+					
+				</div>
 				
 				<div class="row">
 					<div class="col-sm-12">
@@ -328,18 +166,18 @@
 							</div>
 							<div class="panel-body panel-body-narrow">
 								<div class="photo-carousel">
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image01.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image01_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image02.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image02_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image03.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image03_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image04.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image04_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image05.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image05_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image06.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image06_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image07.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image07_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image08.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image08_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image09.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image09_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image10.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image10_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image11.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image11_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="{{ URL::to('gallery/Image12.jpg') }}"><img src="{{ URL::to('gallery/ex_width/Image12_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image01.jpg"><img src="gallery/ex_width/Image01_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image02.jpg"><img src="gallery/ex_width/Image02_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image03.jpg"><img src="gallery/ex_width/Image03_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image04.jpg"><img src="gallery/ex_width/Image04_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image05.jpg"><img src="gallery/ex_width/Image05_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image06.jpg"><img src="gallery/ex_width/Image06_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image07.jpg"><img src="gallery/ex_width/Image07_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image08.jpg"><img src="gallery/ex_width/Image08_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image09.jpg"><img src="gallery/ex_width/Image09_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image10.jpg"><img src="gallery/ex_width/Image10_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image11.jpg"><img src="gallery/ex_width/Image11_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image12.jpg"><img src="gallery/ex_width/Image12_tn.jpg" alt=""></a>
 								</div>
 							</div>
 						</div>

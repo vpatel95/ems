@@ -28,7 +28,7 @@
 			<form action="{{ route('login') }}" method="POST">
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" id="email" name="email" class="form-control input-lg">
+					<input type="email" id="email" name="email" class="form-control input-lg" value="{{ old('email') }}">
 				</div>
 				<div class="form-group">
 					<label for="password">Password <a href="#" class="pull-right">Forgot password?</a></label>
@@ -59,19 +59,19 @@
 			<form action="{{ route('register') }}" method="POST">
 				<div class="form-group">
 					<label for="name">Name</label>
-					<input type="text" id="name" name="name" class="form-control input-lg">
+					<input type="text" id="name" name="name" class="form-control input-lg" value="{{ old('name') }}">
 				</div>
 				<div class="form-group">
 					<label for="id">Id</label>
-					<input type="number" id="id" name="id" class="form-control input-lg">
+					<input type="number" id="id" name="id" class="form-control input-lg" value="{{ old('id') }}">
 				</div>
 				<div class="form-group">
 					<label for="dept">Department</label>
-					<input type="text" id="dept" name="dept" class="form-control input-lg">
+					<input type="text" id="dept" name="dept" class="form-control input-lg" value="{{ old('dept') }}">
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" id="email" name="email" class="form-control input-lg">
+					<input type="email" id="email" name="email" class="form-control input-lg" value="{{ old('email') }}">
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label>

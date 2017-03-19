@@ -5,12 +5,12 @@
 @section('content')
 <div class="flex-center position-ref full-height">
     <div class="top-right links">
-        <a href="{{ route('home') }}">Login/Register</a>
+        <a href="{{ route('admin.login') }}">Login</a>
     </div>
 
     <div class="content">
         <div class="title m-b-md">
-            Event Management System
+            Event Management System Admin Portal
         </div>
     </div>
 </div>
