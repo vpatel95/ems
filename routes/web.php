@@ -63,9 +63,31 @@ Route::prefix('admin')->group(function() {
 		'as' => 'admin.logout'
 	]);
 
+	Route::get('/add/hod', [
+		'uses' => 'AdminController@hodform',
+		'as' => 'add.hod'
+	]);
+
+	Route::post('/add/hod', [
+		'uses' => 'AdminController@addhod',
+		'as' => 'add.hod.submit'
+	]);
+
 	Route::get('/', function() { 
 		return view('welcome.pages.admin');
 	})->name('admin');
+});
+
+Route::prefix('hod')->group(function() {
+	Route::get('/createevent', [
+		'uses' => 'HodController@eventform',
+		'as' => 'hod.event'
+	]);
+
+	Route::post('/createevent', [
+		'uses' => 'HodController@addevent',
+		'as' => 'hod.event.submit'
+	]);
 });
 
 //});

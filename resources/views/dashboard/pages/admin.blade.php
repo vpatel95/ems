@@ -135,30 +135,18 @@
 							<small>1234 Members</small>
 						</div>
 					</div>
-					
-						<a href="#">
-							<div class="col-lg-3 col-md-6">
-								<div class="box_stat box_ico">
-									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-									<h4>Create Event</h4>
-									<small></small>
-								</div>
+					<div class="col-lg-3 col-md-6">
+						<a href="{{ route('add.hod') }}">
+							<div class="box_stat box_ico">
+								<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
+								<h4>Add HOD</h4>
+								<small></small>
 							</div>
 						</a>
-					
-						<a href="#">
-							<div class="col-lg-3 col-md-6">
-								<div class="box_stat box_ico">
-									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-									<h4>Edit Events</h4>
-									<small></small>
-								</div>
-							</div>
-						</a>
-					
+					</div>
 				</div>
-				
-				<div class="row">
+
+				<!-- <div class="row">
 					<div class="col-sm-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -166,23 +154,23 @@
 							</div>
 							<div class="panel-body panel-body-narrow">
 								<div class="photo-carousel">
-									<a class="item gal_lightbox" href="gallery/Image01.jpg"><img src="gallery/ex_width/Image01_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image02.jpg"><img src="gallery/ex_width/Image02_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image03.jpg"><img src="gallery/ex_width/Image03_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image04.jpg"><img src="gallery/ex_width/Image04_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image05.jpg"><img src="gallery/ex_width/Image05_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image06.jpg"><img src="gallery/ex_width/Image06_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image07.jpg"><img src="gallery/ex_width/Image07_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image08.jpg"><img src="gallery/ex_width/Image08_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image09.jpg"><img src="gallery/ex_width/Image09_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image10.jpg"><img src="gallery/ex_width/Image10_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image11.jpg"><img src="gallery/ex_width/Image11_tn.jpg" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image12.jpg"><img src="gallery/ex_width/Image12_tn.jpg" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image01.jpg"><img src="{{ URL::to('gallery/ex_width/Image01_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image02.jpg"><img src="{{ URL::to('gallery/ex_width/Image02_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image03.jpg"><img src="{{ URL::to('gallery/ex_width/Image03_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image04.jpg"><img src="{{ URL::to('gallery/ex_width/Image04_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image05.jpg"><img src="{{ URL::to('gallery/ex_width/Image05_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image06.jpg"><img src="{{ URL::to('gallery/ex_width/Image06_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image07.jpg"><img src="{{ URL::to('gallery/ex_width/Image07_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image08.jpg"><img src="{{ URL::to('gallery/ex_width/Image08_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image09.jpg"><img src="{{ URL::to('gallery/ex_width/Image09_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image10.jpg"><img src="{{ URL::to('gallery/ex_width/Image10_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image11.jpg"><img src="{{ URL::to('gallery/ex_width/Image11_tn.jpg') }}" alt=""></a>
+									<a class="item gal_lightbox" href="gallery/Image12.jpg"><img src="{{ URL::to('gallery/ex_width/Image12_tn.jpg') }}" alt=""></a>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				
 				<div class="row">
 					<div class="col-sm-6">

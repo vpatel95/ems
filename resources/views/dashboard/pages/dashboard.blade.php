@@ -137,25 +137,25 @@
 						</div>
 					</div>
 					@if ($role == 2)
-						<a href="#">
-							<div class="col-lg-3 col-md-6">
+						<div class="col-lg-3 col-md-6">
+							<a href="{{ route('hod.event') }}">
 								<div class="box_stat box_ico">
 									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
 									<h4>Create Event</h4>
 									<small></small>
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 					@elseif ($role == 1)
-						<a href="#">
-							<div class="col-lg-3 col-md-6">
+						<div class="col-lg-3 col-md-6">
+							<a href="#">
 								<div class="box_stat box_ico">
 									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-									<h4>Edit Events</h4>
+									<h4>Edit Event</h4>
 									<small></small>
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 					@endif
 				</div>
 				

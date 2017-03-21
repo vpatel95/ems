@@ -16,7 +16,7 @@ class AdminLoginController extends Controller {
     
     public function login(Request $request) {
     	$this->validate($request, [
-    		'email' => 'required|email|exists:users',
+    		'email' => 'required|email|exists:admins',
     		'password' => 'required'
     	]);
 
