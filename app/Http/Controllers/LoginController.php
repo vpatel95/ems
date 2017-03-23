@@ -72,6 +72,8 @@ class LoginController extends Controller {
         $role = Auth::user()->role;
         if($role == 0) {
             $user = User::find(Auth::user()->id)->member;
+        } elseif($role == 1) {
+            $user = User::find(Auth::user()->id)->coordinator;
         } elseif($role == 2) {
             $user = User::find(Auth::user()->id)->hod;
         }

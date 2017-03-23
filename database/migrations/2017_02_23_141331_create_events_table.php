@@ -20,9 +20,11 @@ class CreateEventsTable extends Migration
             $table->string('sub_type');
             $table->integer('c_id');
             $table->integer('h_id');
-            $table->string('location');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->string('country');
+            $table->string('state');
+            $table->string('city');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->text('description');
             $table->timestamps();
         });

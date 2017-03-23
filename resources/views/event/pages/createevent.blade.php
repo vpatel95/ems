@@ -122,217 +122,216 @@
 			<div id="main_content">
 						
 				<!-- main content -->
-				<div class="row">
-					<div class="col-sm-12">
-						<fieldset>
-                            <legend><span><h3>Event Creation Form</h3></span></legend>
-                        </fieldset>
+				<form action="{{ route('hod.event.submit') }}" method="POST">
+					<div class="row">
+						<div class="col-sm-12">
+							<fieldset>
+	                            <legend><span><h3>Event Creation Form</h3></span></legend>
+	                        </fieldset>
+						</div>
 					</div>
-				</div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Basic Information</h4>
-                            </div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-											<label for="event_name">Name</label>
-											<input type="text" id="event_name" name="event_name" class="form-control">
-										</div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                	<div class="col-sm-6">
-                                		<div class="form-group">
-											<label for="event_description">Brief Description</label>
-											<textarea name="event_description" id="event_description" cols="10" rows="4" class="form-control"></textarea>
-										</div>
-                                	</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-										<div class="form-group">	
-											<label for="event_type">Type</label>
-											<select id="event_type" name="event_type" class="form-control">
-												<option>--Select Type--</option>
-												<option>National</option>
-												<option>International</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-6">
-                                        <div class="form-group">
-											<label for="event_sub_type">Sub Type</label>
-											<select id="event_sub_type" name="event_sub_type" class="form-control">
-												<option>--Select Sub-Type--</option>
-												<option>Conference</option>
-											</select>
-										</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Coordinator &amp; Members</h4>
-                            </div>
-                            <div class="panel-body">
-                            	<div class="row">
-                                    <div class="col-sm-6">
-										<div class="form-group">	
-											<label for="event_coordinator">Coordinator</label>
-											<select id="event_coordinator" name="event_coordinator" class="form-control">
-												<option>--Select Coordinator--</option>
-												<option>Ved Patel</option>
-												<option>Aditya Bharti</option>
-												<option>Naman Agarwal</option>
-												<option>Manish Dandwani</option>
-											</select>
-										</div>
-									</div>
-								</div>
-                                <div class="row">
-                                   	<div class="col-sm-6">
-                                        <div class="form-group">
-                                        	<label for="2col_searchable">Event Members</label>
-                                        	<select id="2col_searchable" name="event_members" multiple>
-												<option value="elem_1">Member 1</option>
-												<option value="elem_2">Member 2</option>
-												<option value="elem_3">Member 3</option>
-												<option value="elem_4">Member 4</option>
-												<option value="elem_5">Member 5</option>
-												<option value="elem_6">Member 6</option>
-												<option value="elem_7">Member 7</option>
-												<option value="elem_8">Member 8</option>
-												<option value="elem_9">Member 9</option>
-												<option value="elem_10">Member 10</option>
-											</select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">Location &amp; Dates</h4>
-                            </div>
-                            <div class="panel-body">
-                            	<div class="row">
-                            		<div class="col-sm-12">
-	                            		<div class="form-group">
-		                            		<label>Location</label>
-		                                    <div class="col-sm-4">
-												<select id="chn_country" name="chn_country" class="form-control">
-													<option value="">- Country -</option>
-													<option value="chn_brazil">Brazil</option>
-													<option value="chn_canada">Canada</option>
-													<option value="chn_usa">USA</option>
-												</select>
+	                <div class="row">
+	                    <div class="col-sm-12">
+	                        <div class="panel panel-default">
+	                            <div class="panel-heading">
+	                                <h4 class="panel-title">Basic Information</h4>
+	                            </div>
+	                            <div class="panel-body">
+	                                <div class="row">
+	                                    <div class="col-sm-6">
+	                                        <div class="form-group">
+												<label for="event_name">Name</label>
+												<input type="text" id="event_name" name="event_name" class="form-control">
 											</div>
-											<div class="col-sm-4">
-												<select id="chn_state" name="chn_state" class="form-control">
-													<option value="">- State -</option>
-													<option value="chn_canada_alberta" class="chn_canada">Alberta</option>
-													<option value="chn_canada_ontario" class="chn_canada">Ontario</option>
-													<option value="chn_canada_quebec" class="chn_canada">Quebec</option>
-													<option value="chn_brazil_saoPaulo" class="chn_brazil">Sao Paulo</option>
-													<option value="chn_brazil_minasGerais" class="chn_brazil">Minas Gerais</option>
-													<option value="chn_brazil_rioDeJaneiro" class="chn_brazil">Rio de Janeiro</option>
-													<option value="chn_usa_california" class="chn_usa">California</option>
-													<option value="chn_usa_texas" class="chn_usa">Texas</option>
-													<option value="chn_usa_newYork" class="chn_usa">New York</option>
-												</select>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="col-sm-6">
+	                                		<div class="form-group">
+												<label for="event_description">Brief Description</label>
+												<textarea name="event_description" id="event_description" cols="10" rows="4" class="form-control"></textarea>
 											</div>
-											<div class="col-sm-4">
-												<select id="chn_city" name="chn_city" class="form-control">
-													<option value="">- City -</option>
-													<option value="chn_brazil_saoPaulo_saoPaulo" class="chn_brazil_saoPaulo">Sao Paulo</option>
-													<option value="chn_brazil_saoPaulo_guarulhos" class="chn_brazil_saoPaulo">Guarulhos</option>
-													<option value="chn_brazil_saoPaulo_campinas" class="chn_brazil_saoPaulo">Campinas</option>
-													<option value="chn_brazil_saoPaulo_saoBernardoDoCampo" class="chn_brazil_saoPaulo">Sao Bernardo do Campo</option>
-													<option value="chn_brazil_saoPaulo_santoAndre" class="chn_brazil_saoPaulo">Santo Andre</option>
-													<option value="chn_brazil_minasGerais_beloHorizonte" class="chn_brazil_minasGerais">Belo Horizonte</option>
-													<option value="chn_brazil_minasGerais_contagem" class="chn_brazil_minasGerais">Contagem</option>
-													<option value="chn_brazil_minasGerais_uberlandia" class="chn_brazil_minasGerais">Uberlandia</option>
-													<option value="chn_brazil_minasGerais_juizDeFora" class="chn_brazil_minasGerais">Juiz de Fora</option>
-													<option value="chn_brazil_minasGerais_betim" class="chn_brazil_minasGerais">Betim</option>
-																		
-													<option value="chn_brazil_rioDeJaneiro_rioDeJaneiro" class="chn_brazil_rioDeJaneiro">Rio de Janeiro</option>
-													<option value="chn_brazil_rioDeJaneiro_saoGoncalo" class="chn_brazil_rioDeJaneiro">Sao Goncalo</option>
-													<option value="chn_brazil_rioDeJaneiro_duqueDeCaxias" class="chn_brazil_rioDeJaneiro">Duque de Caxias</option>
-													<option value="chn_brazil_rioDeJaneiro_novaIguacu" class="chn_brazil_rioDeJaneiro">Nova Iguacu</option>
-													<option value="chn_brazil_rioDeJaneiro_niteroi" class="chn_brazil_rioDeJaneiro">Niteroi</option>
-																		
-													<option value="chn_canada_alberta_calgary" class="chn_canada_alberta">Calgary</option>
-													<option value="chn_canada_alberta_edmonton" class="chn_canada_alberta">Edmonton</option>
-													<option value="chn_canada_alberta_strathcona" class="chn_canada_alberta">Strathcona County</option>
-													<option value="chn_canada_alberta_redDeer" class="chn_canada_alberta">Red Deer</option>
-													<option value="chn_canada_alberta_lethbridge" class="chn_canada_alberta">Lethbridge</option>
-																	  
-													<option value="chn_canada_ontario_toronto" class="chn_canada_ontario">Toronto</option>
-													<option value="chn_canada_ontario_ottawa" class="chn_canada_ontario">Ottawa</option>
-													<option value="chn_canada_ontario_mississauga" class="chn_canada_ontario">Mississauga</option>
-													<option value="chn_canada_ontario_brampton" class="chn_canada_ontario">Brampton</option>
-													<option value="chn_canada_ontario_hamilton" class="chn_canada_ontario">Hamilton</option>
-																		
-													<option value="chn_canada_quebec_montreal" class="chn_canada_quebec">Montreal</option>
-													<option value="chn_canada_quebec_quebec" class="chn_canada_quebec">Quebec</option>
-													<option value="chn_canada_quebec_laval" class="chn_canada_quebec">Laval</option>
-													<option value="chn_canada_quebec_gatineau" class="chn_canada_quebec">Gatineau</option>
-													<option value="chn_canada_quebec_longueuil" class="chn_canada_quebec">Longueuil</option>
-																		
-													<option value="chn_usa_california_losAngeles" class="chn_usa_california">Los Angeles</option>
-													<option value="chn_usa_california_sanDiego" class="chn_usa_california">San Diego</option>
-													<option value="chn_usa_california_sanJose" class="chn_usa_california">San Jose</option>
-													<option value="chn_usa_california_sanFrancisco" class="chn_usa_california">San Francisco</option>
-													<option value="chn_usa_california_fresno" class="chn_usa_california">Fresno</option>
-																		
-													<option value="chn_usa_texas_houston" class="chn_usa_texas">Houston</option>
-													<option value="chn_usa_texas_sanAntonio" class="chn_usa_texas">San Antonio</option>
-													<option value="chn_usa_texas_dallas" class="chn_usa_texas">Dallas</option>
-													<option value="chn_usa_texas_austin" class="chn_usa_texas">Austin</option>
-													<option value="chn_usa_texas_fortWorth" class="chn_usa_texas">Fort Worth</option>
-																		
-													<option value="chn_usa_newYork_newYork" class="chn_usa_newYork">New York</option>
-													<option value="chn_usa_newYork_buffalo" class="chn_usa_newYork">Buffalo</option>
-													<option value="chn_usa_newYork_rochester" class="chn_usa_newYork">Rochester</option>
-													<option value="chn_usa_newYork_yonkers" class="chn_usa_newYork">Yonkers</option>
-													<option value="chn_usa_newYork_syracuse" class="chn_usa_newYork">Syracuse</option>
+	                                	</div>
+	                                </div>
+	                                <div class="row">
+	                                    <div class="col-sm-6">
+											<div class="form-group">	
+												<label for="event_type">Type</label>
+												<select id="event_type" name="event_type" class="form-control">
+													<option>--Select Type--</option>
+													<option>National</option>
+													<option>International</option>
 												</select>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="row">
-                            		<div class="col-sm-12">
-	                            		<div class="form-group">
-		                            		<label>Dates</label>
-		                                    <div class="col-sm-6">
-												<input class="form-control" type="text" placeholder="Start date" id="dpStart" data-date-format="dd-mm-yyyy" data-date-autoclose="true" name="event_start_date">
+									<div class="row">
+										<div class="col-sm-6">
+	                                        <div class="form-group">
+												<label for="event_sub_type">Sub Type</label>
+												<select id="event_sub_type" name="event_sub_type" class="form-control">
+													<option>--Select Sub-Type--</option>
+													<option>Conference</option>
+												</select>
 											</div>
-                                            <div class="col-sm-6">
-												<input class="form-control" type="text" placeholder="End date" id="dpEnd" data-date-format="dd-mm-yyyy" data-date-autoclose="true" name="event_end_date">
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="col-sm-12">
+	                        <div class="panel panel-default">
+	                            <div class="panel-heading">
+	                                <h4 class="panel-title">Coordinator &amp; Members</h4>
+	                            </div>
+	                            <div class="panel-body">
+	                            	<div class="row">
+	                                    <div class="col-sm-6">
+											<div class="form-group">	
+												<label for="event_coordinator">Coordinator</label>
+												<select id="event_coordinator" name="event_coordinator" class="form-control">
+													<option>--Select Coordinator--</option>
+													@foreach ($members as $member)
+														<option value="{{ $member->m_id }}">{{ $member->name }}</option>
+													@endforeach
+												</select>
 											</div>
 										</div>
 									</div>
-								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	                                <div class="row">
+	                                   	<div class="col-sm-6">
+	                                        <div class="form-group">
+	                                        	<label for="2col_searchable">Event Members</label>
+	                                        	<select id="2col_searchable" name="event_members[]" multiple>
+													@foreach ($members as $member)
+														<option value="{{ $member->m_id }}">{{ $member->name }}</option>
+													@endforeach
+												</select>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="col-sm-12">
+	                        <div class="panel panel-default">
+	                            <div class="panel-heading">
+	                                <h4 class="panel-title">Location &amp; Dates</h4>
+	                            </div>
+	                            <div class="panel-body">
+	                            	<div class="row">
+	                            		<div class="col-sm-12">
+		                            		<div class="form-group">
+			                            		<label>Location</label>
+			                                    <div class="col-sm-4">
+													<select id="chn_country" name="country" class="form-control">
+														<option value="">- Country -</option>
+														<option value="chn_brazil">Brazil</option>
+														<option value="chn_canada">Canada</option>
+														<option value="chn_usa">USA</option>
+													</select>
+												</div>
+												<div class="col-sm-4">
+													<select id="chn_state" name="state" class="form-control">
+														<option value="">- State -</option>
+														<option value="chn_canada_alberta" class="chn_canada">Alberta</option>
+														<option value="chn_canada_ontario" class="chn_canada">Ontario</option>
+														<option value="chn_canada_quebec" class="chn_canada">Quebec</option>
+														<option value="chn_brazil_saoPaulo" class="chn_brazil">Sao Paulo</option>
+														<option value="chn_brazil_minasGerais" class="chn_brazil">Minas Gerais</option>
+														<option value="chn_brazil_rioDeJaneiro" class="chn_brazil">Rio de Janeiro</option>
+														<option value="chn_usa_california" class="chn_usa">California</option>
+														<option value="chn_usa_texas" class="chn_usa">Texas</option>
+														<option value="chn_usa_newYork" class="chn_usa">New York</option>
+													</select>
+												</div>
+												<div class="col-sm-4">
+													<select id="chn_city" name="city" class="form-control">
+														<option value="">- City -</option>
+														<option value="chn_brazil_saoPaulo_saoPaulo" class="chn_brazil_saoPaulo">Sao Paulo</option>
+														<option value="chn_brazil_saoPaulo_guarulhos" class="chn_brazil_saoPaulo">Guarulhos</option>
+														<option value="chn_brazil_saoPaulo_campinas" class="chn_brazil_saoPaulo">Campinas</option>
+														<option value="chn_brazil_saoPaulo_saoBernardoDoCampo" class="chn_brazil_saoPaulo">Sao Bernardo do Campo</option>
+														<option value="chn_brazil_saoPaulo_santoAndre" class="chn_brazil_saoPaulo">Santo Andre</option>
+														<option value="chn_brazil_minasGerais_beloHorizonte" class="chn_brazil_minasGerais">Belo Horizonte</option>
+														<option value="chn_brazil_minasGerais_contagem" class="chn_brazil_minasGerais">Contagem</option>
+														<option value="chn_brazil_minasGerais_uberlandia" class="chn_brazil_minasGerais">Uberlandia</option>
+														<option value="chn_brazil_minasGerais_juizDeFora" class="chn_brazil_minasGerais">Juiz de Fora</option>
+														<option value="chn_brazil_minasGerais_betim" class="chn_brazil_minasGerais">Betim</option>
+																			
+														<option value="chn_brazil_rioDeJaneiro_rioDeJaneiro" class="chn_brazil_rioDeJaneiro">Rio de Janeiro</option>
+														<option value="chn_brazil_rioDeJaneiro_saoGoncalo" class="chn_brazil_rioDeJaneiro">Sao Goncalo</option>
+														<option value="chn_brazil_rioDeJaneiro_duqueDeCaxias" class="chn_brazil_rioDeJaneiro">Duque de Caxias</option>
+														<option value="chn_brazil_rioDeJaneiro_novaIguacu" class="chn_brazil_rioDeJaneiro">Nova Iguacu</option>
+														<option value="chn_brazil_rioDeJaneiro_niteroi" class="chn_brazil_rioDeJaneiro">Niteroi</option>
+																			
+														<option value="chn_canada_alberta_calgary" class="chn_canada_alberta">Calgary</option>
+														<option value="chn_canada_alberta_edmonton" class="chn_canada_alberta">Edmonton</option>
+														<option value="chn_canada_alberta_strathcona" class="chn_canada_alberta">Strathcona County</option>
+														<option value="chn_canada_alberta_redDeer" class="chn_canada_alberta">Red Deer</option>
+														<option value="chn_canada_alberta_lethbridge" class="chn_canada_alberta">Lethbridge</option>
+																		  
+														<option value="chn_canada_ontario_toronto" class="chn_canada_ontario">Toronto</option>
+														<option value="chn_canada_ontario_ottawa" class="chn_canada_ontario">Ottawa</option>
+														<option value="chn_canada_ontario_mississauga" class="chn_canada_ontario">Mississauga</option>
+														<option value="chn_canada_ontario_brampton" class="chn_canada_ontario">Brampton</option>
+														<option value="chn_canada_ontario_hamilton" class="chn_canada_ontario">Hamilton</option>
+																			
+														<option value="chn_canada_quebec_montreal" class="chn_canada_quebec">Montreal</option>
+														<option value="chn_canada_quebec_quebec" class="chn_canada_quebec">Quebec</option>
+														<option value="chn_canada_quebec_laval" class="chn_canada_quebec">Laval</option>
+														<option value="chn_canada_quebec_gatineau" class="chn_canada_quebec">Gatineau</option>
+														<option value="chn_canada_quebec_longueuil" class="chn_canada_quebec">Longueuil</option>
+																			
+														<option value="chn_usa_california_losAngeles" class="chn_usa_california">Los Angeles</option>
+														<option value="chn_usa_california_sanDiego" class="chn_usa_california">San Diego</option>
+														<option value="chn_usa_california_sanJose" class="chn_usa_california">San Jose</option>
+														<option value="chn_usa_california_sanFrancisco" class="chn_usa_california">San Francisco</option>
+														<option value="chn_usa_california_fresno" class="chn_usa_california">Fresno</option>
+																			
+														<option value="chn_usa_texas_houston" class="chn_usa_texas">Houston</option>
+														<option value="chn_usa_texas_sanAntonio" class="chn_usa_texas">San Antonio</option>
+														<option value="chn_usa_texas_dallas" class="chn_usa_texas">Dallas</option>
+														<option value="chn_usa_texas_austin" class="chn_usa_texas">Austin</option>
+														<option value="chn_usa_texas_fortWorth" class="chn_usa_texas">Fort Worth</option>
+																			
+														<option value="chn_usa_newYork_newYork" class="chn_usa_newYork">New York</option>
+														<option value="chn_usa_newYork_buffalo" class="chn_usa_newYork">Buffalo</option>
+														<option value="chn_usa_newYork_rochester" class="chn_usa_newYork">Rochester</option>
+														<option value="chn_usa_newYork_yonkers" class="chn_usa_newYork">Yonkers</option>
+														<option value="chn_usa_newYork_syracuse" class="chn_usa_newYork">Syracuse</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+	                            		<div class="col-sm-12">
+		                            		<div class="form-group">
+			                            		<label>Dates</label>
+			                                    <div class="col-sm-6">
+													<input class="form-control" type="text" placeholder="Start date" id="dpStart" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_start_date">
+												</div>
+	                                            <div class="col-sm-6">
+													<input class="form-control" type="text" placeholder="End date" id="dpEnd" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_end_date">
+												</div>
+											</div>
+										</div>
+									</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                	<center><button type="submit" class="btn btn-default btn-lg btn-block">Create Event</button></center>
+	                	<input type="hidden" name="_token" value="{{ Session::token() }}">
+	                </div>
+				</form>
+				
 			</div>
 		</div>
 	</section>

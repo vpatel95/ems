@@ -34,4 +34,30 @@ class User extends Authenticatable
     public function hod() {
         return $this->hasOne('App\Hod', 'h_id');
     }
+
+    public function coordinator() {
+        return $this->hasOne('App\Coordinator', 'c_id');
+    }
+
+    public function isHod() {
+        if($this->role == 2)
+            return true;
+
+        return false;
+    }
+
+    public function isCoordinator() {
+        if($this->role == 1)
+            return true;
+
+        return false;
+    }
+
+    public function isMember() {
+        if($this->role == 0)
+            return true;
+
+        return false;
+    }
+
 }

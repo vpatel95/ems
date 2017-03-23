@@ -16,7 +16,7 @@ class CreateHodsTable extends Migration
         Schema::create('hods', function (Blueprint $table) {
             $table->integer('h_id')->primary();
             $table->string('name');
-            $table->string('dept');
+            $table->string('dept')->unique();
             $table->timestamps();
         });
 

@@ -16,11 +16,20 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-    	'id' => $faker->unique()->randomNumber($nbDigits = 6),
+    	'id' => $faker->unique()->numberBetween($min = 2, $max = 1000),
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-        'role' => $faker->numberBetween($min = 0, $max = 2),
+        'role' => 0,
+    ];
+});
+
+$factory->define(App\Member::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+    	'm_id' => $faker->unique()->numberBetween($min = 2, $max = 1000),
+        'name' => $faker->name(),
+        'dept' => $faker->randomElement($array = array ('CSE','ECE','SWE','IT','EEE','MECH','CHEM')),
     ];
 });
 
