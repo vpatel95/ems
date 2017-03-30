@@ -6,8 +6,8 @@
 	<section id="breadcrumbs">
 		<div class="container">
 			<ul>
-				<li><a href="#">Hod</a></li>
-				<li><span>Create Event</span></li>					
+				<li><a href="#">Coordinator</a></li>
+				<li><span>Edit Event</span></li>					
 			</ul>
 		</div>
 	</section>
@@ -19,11 +19,11 @@
 			<div id="main_content">
 						
 				<!-- main content -->
-				<form action="{{ route('hod.event.submit') }}" method="POST">
+				<form action="{{ route('edit.event.submit', $event->id) }}" method="POST">
 					<div class="row">
 						<div class="col-sm-12">
 							<fieldset>
-	                            <legend><span><h3>Event Creation Form</h3></span></legend>
+	                            <legend><span><h3>Edit Event</h3></span></legend>
 	                        </fieldset>
 						</div>
 					</div>
@@ -38,7 +38,7 @@
 	                                    <div class="col-sm-6">
 	                                        <div class="form-group">
 												<label for="event_name">Name</label>
-												<input type="text" id="event_name" name="event_name" class="form-control">
+												<input type="text" id="event_name" name="event_name" class="form-control" value="{{ $event->name }}">
 											</div>
 	                                    </div>
 	                                </div>
@@ -46,7 +46,7 @@
 	                                	<div class="col-sm-6">
 	                                		<div class="form-group">
 												<label for="event_description">Brief Description</label>
-												<textarea name="event_description" id="event_description" cols="10" rows="4" class="form-control"></textarea>
+												<textarea name="event_description" id="event_description" cols="10" rows="4" class="form-control">{{ $event->description }}</textarea>
 											</div>
 	                                	</div>
 	                                </div>
@@ -56,8 +56,13 @@
 												<label for="event_type">Type</label>
 												<select id="event_type" name="event_type" class="form-control">
 													<option>--Select Type--</option>
-													<option>National</option>
-													<option>International</option>
+													@if($event->type == 'National')
+														<option selected>National</option>
+														<option>International</option>
+													@else
+														<option>National</option>
+														<option selected>International</option>
+													@endif
 												</select>
 											</div>
 										</div>
@@ -68,7 +73,11 @@
 												<label for="event_sub_type">Sub Type</label>
 												<select id="event_sub_type" name="event_sub_type" class="form-control">
 													<option>--Select Sub-Type--</option>
-													<option>Conference</option>
+													@if($event->sub_type == 'Conference')
+														<option selected>Conference</option>
+													@else
+														<option>Conference</option>
+													@endif
 												</select>
 											</div>
 	                                    </div>
@@ -91,7 +100,11 @@
 												<select id="event_coordinator" name="event_coordinator" class="form-control">
 													<option>--Select Coordinator--</option>
 													@foreach ($coordinators as $coordinator)
-														<option value="{{ $coordinator->c_id }}">{{ $coordinator->name }}</option>
+														@if($event->c_id == $coordinator->c_id)
+															<option value="{{ $coordinator->c_id }}" selected>{{ $coordinator->name }}</option>
+														@else
+															<option value="{{ $coordinator->c_id }}">{{ $coordinator->name }}</option>
+														@endif
 													@endforeach
 													@foreach ($memcord as $member)
 														<option value="{{ $member->m_id }}">{{ $member->name }}</option>
@@ -106,7 +119,17 @@
 	                                        	<label for="2col_searchable">Event Members</label>
 	                                        	<select id="2col_searchable" name="event_members[]" multiple>
 													@foreach ($members as $member)
-														<option value="{{ $member->m_id }}">{{ $member->name }}</option>
+														{{ $flag = 0 }}
+														@foreach($eventmembers as $eventmember)
+															@if($member->m_id == $eventmember->m_id)
+																<option value="{{ $member->m_id }}" selected>{{ $member->name }}</option>
+																{{ $flag = 1 }}
+																@break
+															@endif
+														@endforeach
+														@if($flag == 0)
+															<option value="{{ $member->m_id }}">{{ $member->name }}</option>
+														@endif
 													@endforeach
 												</select>
 	                                        </div>
@@ -214,10 +237,10 @@
 		                            		<div class="form-group">
 			                            		<label>Dates</label>
 			                                    <div class="col-sm-6">
-													<input class="form-control" type="text" placeholder="Start date" id="dpStart" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_start_date">
+													<input class="form-control" type="text" placeholder="Start date" id="dpStart" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_start_date" value="{{ $event->start_date }}">
 												</div>
 	                                            <div class="col-sm-6">
-													<input class="form-control" type="text" placeholder="End date" id="dpEnd" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_end_date">
+													<input class="form-control" type="text" placeholder="End date" id="dpEnd" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_end_date" value="{{ $event->end_date }}">
 												</div>
 											</div>
 										</div>
@@ -227,7 +250,7 @@
 	                    </div>
 	                </div>
 	                <div class="row">
-	                	<center><button type="submit" class="btn btn-default btn-lg btn-block">Create Event</button></center>
+	                	<center><button type="submit" class="btn btn-default btn-lg btn-block">Edit Event</button></center>
 	                	<input type="hidden" name="_token" value="{{ Session::token() }}">
 	                </div>
 				</form>

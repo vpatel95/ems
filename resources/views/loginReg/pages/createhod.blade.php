@@ -2,23 +2,6 @@
 
 @section('title', 'Welcome to EMS')
 
-@section('header')
-	<header class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="dashboard.html">Ebro Admin</a>
-			</div>
-			<div class="pull-right">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#" class="login_toggle">Log In</a></li>
-					<li><a href="#" class="register_toggle">Sign Up</a></li>
-					<li><a href="#">Help</a></li>
-				</ul>
-			</div>
-		</div>
-	</header>
-@endsection
-
 @section('content')
 	<div class="login_wrapper">
 		<div class="login_panel log_section">

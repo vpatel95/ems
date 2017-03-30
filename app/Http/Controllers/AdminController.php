@@ -27,7 +27,9 @@ class AdminController extends Controller
      */
 
     public function dashboard() {
-        return view('dashboard.pages.admin');
+        return view('dashboard.pages.admin', [
+            'user' => Auth::user()
+        ]);
     }
 
     public function logout() {

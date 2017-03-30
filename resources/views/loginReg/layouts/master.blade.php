@@ -7,6 +7,8 @@
 
 	</head>
 	<body>
+		@include('loginReg.includes.header')
+		
 		<main>
 			@yield('content')
 		</main>

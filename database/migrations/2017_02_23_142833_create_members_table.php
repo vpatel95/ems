@@ -17,6 +17,7 @@ class CreateMembersTable extends Migration
             $table->integer('m_id')->primary();
             $table->string('name');
             $table->string('dept');
+            $table->string('event_no')->default(0);
             $table->timestamps();
         });
 

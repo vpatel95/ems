@@ -10,7 +10,6 @@ use App\EventMember;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
 
 class HodController extends Controller
 {
@@ -21,14 +20,14 @@ class HodController extends Controller
     		if((Auth::check()) && (Auth::user()->isHod()))
     			return $next($request);
 
-    		return redirect()->route('dashboard');
+    		return redirect()->back();
     	});
     }
 
     private function getEventId() {
     	if(Event::all()->count() > 0) {
-    		$event = Event::max(id);
-    		return $event->id;
+    		$event = Event::max('id');
+            return $event;
     	}
 
     	return 0;
@@ -37,9 +36,14 @@ class HodController extends Controller
     public function eventform() {
 
     	$members = Member::all();
+        $memcord = Member::all()->where('event_no', 0);
+        $coordinators = Coordinator::all();
 
     	return view('event.pages.createevent', [
-    		'members' => $members
+    		'user' => User::find(Auth::user()->id)->hod,
+            'members' => $members,
+            'memcord' => $memcord,
+            'coordinators' => $coordinators
     	]);
     }
 
@@ -71,21 +75,20 @@ class HodController extends Controller
     	$start_date = $request['event_start_date'];
     	$end_date = $request['event_end_date'];
 
-    	$mem = Member::find($coordinator);
+    	if($mem = Member::find($coordinator)){
+            $coord = new Coordinator();
+            $coord->c_id = $mem->m_id;
+            $coord->name = $mem->name;
+            $coord->dept = $mem->dept;
+            $coord->save();
+
+            $user = User::find($coordinator);
+            $user->role = 1;
+            $user->save();
+
+            $mem->delete();
+        }
     	
-    	$coord = new Coordinator();
-    	$coord->c_id = $mem->m_id;
-    	$coord->name = $mem->name;
-    	$coord->dept = $mem->dept;
-    	$coord->save();
-
-    	$user = User::find($coordinator);
-    	$user->role = 1;
-    	$user->save();
-
-    	$mem->delete();
-
-
 
     	$event = new Event();
 
@@ -110,6 +113,8 @@ class HodController extends Controller
             $em->e_id = $id;
             $em->m_id = $members[$i];
             $em->save();
+
+            Member::find($members[$i])->increment('event_no');
         }
 
     	return redirect()->route('dashboard');

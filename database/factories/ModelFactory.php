@@ -16,7 +16,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-    	'id' => $faker->unique()->numberBetween($min = 2, $max = 1000),
+    	'id' => $faker->unique()->numberBetween($min = 2, $max = 500),
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'role' => 0,
@@ -27,9 +27,10 @@ $factory->define(App\Member::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-    	'm_id' => $faker->unique()->numberBetween($min = 2, $max = 1000),
+    	'm_id' => $faker->unique()->numberBetween($min = 2, $max = 500),
         'name' => $faker->name(),
         'dept' => $faker->randomElement($array = array ('CSE','ECE','SWE','IT','EEE','MECH','CHEM')),
+        'event_no' => 0,
     ];
 });
 

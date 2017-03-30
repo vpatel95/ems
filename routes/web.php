@@ -79,7 +79,7 @@ Route::prefix('admin')->group(function() {
 });
 
 Route::prefix('hod')->group(function() {
-	Route::get('/createevent', [
+	Route::get('/create/event', [
 		'uses' => 'HodController@eventform',
 		'as' => 'hod.event'
 	]);
@@ -87,6 +87,23 @@ Route::prefix('hod')->group(function() {
 	Route::post('/createevent', [
 		'uses' => 'HodController@addevent',
 		'as' => 'hod.event.submit'
+	]);
+});
+
+Route::prefix('coordinator')->group(function() {
+	Route::get('/event',[
+		'uses' => 'CoordinatorController@viewevent',
+		'as' => 'view.event'
+	]);
+
+	Route::get('/event/edit/{id}', [
+		'uses' => 'CoordinatorController@editevent',
+		'as' => 'edit.event'
+	]);
+
+	Route::post('/event/edit/{id}', [
+		'uses' => 'CoordinatorController@updateevent',
+		'as' => 'edit.event.submit'
 	]);
 });
 

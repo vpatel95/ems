@@ -10,7 +10,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Event Management System Admin Portal
+            EMS Admin Portal
         </div>
     </div>
 </div>
