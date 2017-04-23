@@ -1,7 +1,4 @@
-<!-- jQuery -->
-<script src="{{ URL::to('js/jquery.min.js') }}"></script>
-<!-- bootstrap framework -->
-<script src="{{ URL::to('bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ URL::to('js/app.js') }}"></script>
 <!-- jQuery resize event -->
 <script src="{{ URL::to('js/jquery.ba-resize.min.js') }}"></script>
 <!-- jquery cookie -->
@@ -38,4 +35,5 @@
   ga('create', 'UA-65389704-1', 'auto');
   ga('send', 'pageview');
 </script>
+
 

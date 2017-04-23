@@ -248,3 +248,13 @@
 		</div>
 	</section>
 @endsection
+
+@push('scripts')
+	<script type="text/javascript">
+		Echo.private('admin')
+		    .listen('UserCreated', (e) => {
+		        console.log(e);
+		        alert(e);
+		    });
+	</script>
+@endpush

@@ -31,7 +31,8 @@ class CoordinatorController extends Controller
     	$events = Event::all()->where('c_id', Auth::user()->id);
     	return view('event.pages.events', [
             'user' => User::find(Auth::user()->id)->coordinator,
-    		'events' => $events
+    		'events' => $events,
+            'role' => Auth::user()->role
     	]);
     }
 
@@ -56,8 +57,6 @@ class CoordinatorController extends Controller
     public function updateevent($id, Request $request) {
 
         $event = Event::find($id);
-        $c = $event->c_id;
-
         $event_members = EventMember::all()->where('e_id', $event->id);
 
         for ($i=0; $i < sizeof($event_members) ; $i++) { 
@@ -92,38 +91,6 @@ class CoordinatorController extends Controller
         $start_date = $request['event_start_date'];
         $end_date = $request['event_end_date'];
 
-        if($coordinator != $event->c_id) {
-            if((Event::where('c_id', $event->c_id)->count()) == 1) {
-                if($coord = Coordinator::find($event->c_id)) {
-                    $mem = new Member();
-                    $mem->m_id = $coord->c_id;
-                    $mem->name = $coord->name;
-                    $mem->dept = $coord->dept;
-                    $mem->save();
-
-                    $user = User::find($event->c_id);
-                    $user->role = 0;
-                    $user->save();
-
-                    $event->c_id = 0;
-
-                }
-            }
-        }
-
-        if($mem = Member::find($coordinator)){
-            $coord = new Coordinator();
-            $coord->c_id = $mem->m_id;
-            $coord->name = $mem->name;
-            $coord->dept = $mem->dept;
-            $coord->save();
-
-            $user = User::find($coordinator);
-            $user->role = 1;
-            $user->save();
-
-            $mem->delete();
-        }
         
         $event->name = $name;
         $event->type = $type;
@@ -137,7 +104,7 @@ class CoordinatorController extends Controller
         $event->end_date = $end_date;
 
         $event->save();
-        Coordinator::find($c)->delete();
+        
         for ($i=0; $i < sizeof($members); $i++) { 
             $em = new EventMember();
             $em->e_id = $id;

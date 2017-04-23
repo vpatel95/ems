@@ -11,8 +11,9 @@
 |
 */
 
-//Route::group(['middleware' => ['web']], function() {
-	
+/*********************************************/
+/********  COMMON USER ROUTES ROUTES  ********/
+/*********************************************/	
 Route::get('/', function () {
     return view('welcome.pages.welcome');
 })->name('welcome');
@@ -26,7 +27,7 @@ Route::post('/login', [
 	'as' => 'login'
 ]);
 
-Route::any('/register', [
+Route::post('/register', [
 	'uses' => 'LoginController@register',
 	'as' => 'register'
 ]);
@@ -42,6 +43,9 @@ Route::get('/dashboard', [
 	'as' => 'dashboard'
 ]);
 
+/********************************/
+/********  ADMIN ROUTES  ********/
+/********************************/
 Route::prefix('admin')->group(function() {
 	Route::get('/login', function() {
 		return view('loginReg.pages.admin');
@@ -78,6 +82,10 @@ Route::prefix('admin')->group(function() {
 	})->name('admin');
 });
 
+
+/******************************/
+/********  HOD ROUTES  ********/
+/******************************/
 Route::prefix('hod')->group(function() {
 	Route::get('/create/event', [
 		'uses' => 'HodController@eventform',
@@ -88,8 +96,27 @@ Route::prefix('hod')->group(function() {
 		'uses' => 'HodController@addevent',
 		'as' => 'hod.event.submit'
 	]);
+
+	Route::get('/event', [
+		'uses' => 'HodController@viewevent',
+		'as' => 'view.event.hod'
+	]);
+
+	Route::get('/event/edit/{id}', [
+		'uses' => 'HodController@editevent',
+		'as' => 'edit.event.hod'
+	]);
+
+	Route::post('/event/edit/{id}', [
+		'uses' => 'HodController@editevent',
+		'as' => 'edit.event.submit.hod'
+	]);
 });
 
+
+/**************************************/
+/********  COORDINATOR ROUTES  ********/
+/**************************************/
 Route::prefix('coordinator')->group(function() {
 	Route::get('/event',[
 		'uses' => 'CoordinatorController@viewevent',
@@ -107,7 +134,6 @@ Route::prefix('coordinator')->group(function() {
 	]);
 });
 
-//});
 
 
 

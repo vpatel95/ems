@@ -44,12 +44,21 @@
 								</div>
 							</a>
 						</div>
+						<div class="col-lg-3 col-md-6">
+							<a href="{{ route('view.event.hod') }}">
+								<div class="box_stat box_ico">
+									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
+									<h4>View Events</h4>
+									<small></small>
+								</div>
+							</a>
+						</div>
 					@elseif ($role == 1)
 						<div class="col-lg-3 col-md-6">
 							<a href="{{ route('view.event') }}">
 								<div class="box_stat box_ico">
 									<span class="stat_ico stat_ico_3"><i class="li_banknote"></i></span>
-									<h4>Events</h4>
+									<h4>View Events</h4>
 									<small></small>
 								</div>
 							</a>
@@ -260,3 +269,13 @@
 		</div>
 	</section>
 @endsection
+
+@push('scripts')
+	<script type="text/javascript">
+		Echo.private('admin')
+		    .listen('UserCreated', (e) => {
+		        console.log(e);
+		        alert(e);
+		    });
+	</script>
+@endpush

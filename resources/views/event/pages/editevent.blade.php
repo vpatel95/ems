@@ -19,6 +19,15 @@
 			<div id="main_content">
 						
 				<!-- main content -->
+				@if (count($errors) > 0)
+				    <div class="alert alert-danger">
+				        <ul>
+				            @foreach ($errors->all() as $error)
+				                <li>{{ $error }}</li>
+				            @endforeach
+				        </ul>
+				    </div>
+				@endif
 				<form action="{{ route('edit.event.submit', $event->id) }}" method="POST">
 					<div class="row">
 						<div class="col-sm-12">
@@ -97,19 +106,29 @@
 	                                    <div class="col-sm-6">
 											<div class="form-group">	
 												<label for="event_coordinator">Coordinator</label>
-												<select id="event_coordinator" name="event_coordinator" class="form-control">
-													<option>--Select Coordinator--</option>
-													@foreach ($coordinators as $coordinator)
-														@if($event->c_id == $coordinator->c_id)
-															<option value="{{ $coordinator->c_id }}" selected>{{ $coordinator->name }}</option>
-														@else
-															<option value="{{ $coordinator->c_id }}">{{ $coordinator->name }}</option>
-														@endif
-													@endforeach
-													@foreach ($memcord as $member)
-														<option value="{{ $member->m_id }}">{{ $member->name }}</option>
-													@endforeach
-												</select>
+												@if($user->role == 2)
+													<select id="event_coordinator" name="event_coordinator" class="form-control">
+														<option>--Select Coordinator--</option>
+														@foreach ($coordinators as $coordinator)
+															@if($event->c_id == $coordinator->c_id)
+																<option value="{{ $coordinator->c_id }}" selected>{{ $coordinator->name }}</option>
+															@else
+																<option value="{{ $coordinator->c_id }}">{{ $coordinator->name }}</option>
+															@endif
+														@endforeach
+														@foreach ($memcord as $member)
+															<option value="{{ $member->m_id }}">{{ $member->name }}</option>
+														@endforeach
+													</select>
+												@else
+													<select id="event_coordinator" name="event_coordinator" class="form-control">
+														@foreach ($coordinators as $coordinator)
+															@if($event->c_id == $coordinator->c_id)
+																<option value="{{ $coordinator->c_id }}" selected readonly>{{ $coordinator->name }}</option>
+															@endif
+														@endforeach
+													</select>
+												@endif
 											</div>
 										</div>
 									</div>
@@ -304,8 +323,10 @@
 	<![endif]-->
 
 	<script type="text/javascript">
-		$('.input-daterange input').each(function() {
-		    $(this).datepicker('clearDates');
+		$(document).ready(function() {
+			$('.input-daterange input').each(function() {
+			    $(this).datepicker('clearDates');
+			});
 		});
 	</script>
 

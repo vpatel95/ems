@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Member;
 use App\Hod;
+use App\Events\UserCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,6 +43,7 @@ class LoginController extends Controller {
 
         $member->save();
 
+
     	if(Auth::attempt(['email' => $email, 'password' => $password])){
             return redirect()->route('dashboard');
         }
@@ -57,6 +59,7 @@ class LoginController extends Controller {
     	$password = $request['password'];
 
     	if(Auth::attempt(['email' => $email, 'password' => $password])){
+            event(new UserCreated(User::where('email',$email)->first()));
     		return redirect()->route('dashboard');
     	}
 

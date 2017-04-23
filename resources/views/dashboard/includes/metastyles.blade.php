@@ -1,3 +1,4 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- vector map -->
 <link rel="stylesheet" href="{{ URL::to('js/lib/jvectormap/jquery-jvectormap-1.2.2.css') }}">
 <!-- owl carousel -->        

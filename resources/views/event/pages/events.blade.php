@@ -73,7 +73,11 @@
 														<li>
 															<div class="media">
 																<div class="media-body">
-																	<p class="contact_list_username"><a href="{{ route('edit.event', $event->id) }}"><b>EDIT EVENT</b></a></p>
+																	@if($role ==2)
+																		<p class="contact_list_username"><a href="{{ route('edit.event.hod', $event->id) }}"><b>EDIT EVENT</b></a></p>
+																	@elseif($role ==1)
+																		<p class="contact_list_username"><a href="{{ route('edit.event', $event->id) }}"><b>EDIT EVENT</b></a></p>
+																	@endif
 																</div>
 															</div>
 														</li>

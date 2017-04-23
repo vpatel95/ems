@@ -33,6 +33,32 @@ class HodController extends Controller
     	return 0;
     }
 
+    public function viewevent() {
+
+        $events = Event::all();
+        return view('event.pages.events', [
+            'user' => User::find(Auth::user()->id)->hod,
+            'events' => $events,
+            'role' => Auth::user()->role
+        ]);
+    }
+
+    public function editevent($id) {
+
+        $event = Event::find($id);
+        $coordinators = Coordinator::all();
+        $eventmembers = EventMember::all()->where('e_id',$event->id);
+        $members = Member::all();
+
+        return view('event.pages.editevent', [
+            'user' => User::find(Auth::user()->id)->hod,
+            'event' => $event,
+            'members' => $members,
+            'coordinators' => $coordinators,
+            'eventmembers' => $eventmembers
+        ]);
+    }
+
     public function eventform() {
 
     	$members = Member::all();
