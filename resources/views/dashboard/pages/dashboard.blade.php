@@ -275,7 +275,7 @@
 		Echo.private('admin')
 		    .listen('UserCreated', (e) => {
 		        console.log(e);
-		        alert(e);
+		        alert(e.user.name);
 		    });
 	</script>
 @endpush

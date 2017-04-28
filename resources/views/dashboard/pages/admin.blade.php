@@ -44,32 +44,6 @@
 						</a>
 					</div>
 				</div>
-
-				<!-- <div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">Latest Images</h4>
-							</div>
-							<div class="panel-body panel-body-narrow">
-								<div class="photo-carousel">
-									<a class="item gal_lightbox" href="gallery/Image01.jpg"><img src="{{ URL::to('gallery/ex_width/Image01_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image02.jpg"><img src="{{ URL::to('gallery/ex_width/Image02_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image03.jpg"><img src="{{ URL::to('gallery/ex_width/Image03_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image04.jpg"><img src="{{ URL::to('gallery/ex_width/Image04_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image05.jpg"><img src="{{ URL::to('gallery/ex_width/Image05_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image06.jpg"><img src="{{ URL::to('gallery/ex_width/Image06_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image07.jpg"><img src="{{ URL::to('gallery/ex_width/Image07_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image08.jpg"><img src="{{ URL::to('gallery/ex_width/Image08_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image09.jpg"><img src="{{ URL::to('gallery/ex_width/Image09_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image10.jpg"><img src="{{ URL::to('gallery/ex_width/Image10_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image11.jpg"><img src="{{ URL::to('gallery/ex_width/Image11_tn.jpg') }}" alt=""></a>
-									<a class="item gal_lightbox" href="gallery/Image12.jpg"><img src="{{ URL::to('gallery/ex_width/Image12_tn.jpg') }}" alt=""></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> -->
 				
 				<div class="row">
 					<div class="col-sm-6">
@@ -113,7 +87,7 @@
 												[new Date('08/03/2012').getTime(),17],
 												[new Date('08/04/2012').getTime(),9],
 												[new Date('08/05/2012').getTime(),26],
-												[new Date('08/06/2012').getTime(),4],
+												[new Date('08/login06/2012').getTime(),4],
 												[new Date('08/07/2012').getTime(),31],
 												[new Date('08/08/2012').getTime(),12]
 											];
@@ -254,7 +228,7 @@
 		Echo.private('admin')
 		    .listen('UserCreated', (e) => {
 		        console.log(e);
-		        alert(e);
+		        alert(e.user.name);
 		    });
 	</script>
 @endpush

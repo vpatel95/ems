@@ -34,3 +34,19 @@ $factory->define(App\Member::class, function (Faker\Generator $faker) {
     ];
 });
 
+/*$factory->define(App\Event::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->name(),
+        'type' => 'National',
+        'sub_type' => 'Conference',
+        'c_id' => 2,
+        'h_id' => 1,
+        'country' => 'USA',
+        'start_date' => '2017-06-03',
+        'end_date' => '2017-06-03',
+        'description' => 'This is a seeded event',
+    ];
+});*/
+

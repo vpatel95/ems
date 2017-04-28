@@ -253,14 +253,14 @@
 									</div>
 									<div class="row">
 	                            		<div class="col-sm-12">
-		                            		<div class="form-group">
+		                            		<div class="form-group input-daterange">
 			                            		<label>Dates</label>
-			                                    <div class="col-sm-6">
-													<input class="form-control" type="text" placeholder="Start date" id="dpStart" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_start_date" value="{{ $event->start_date }}">
-												</div>
-	                                            <div class="col-sm-6">
-													<input class="form-control" type="text" placeholder="End date" id="dpEnd" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_end_date" value="{{ $event->end_date }}">
-												</div>
+			                            		<div class="col-sm-6">
+			                            			<input class="form-control actual_range" type="text" placeholder="Start date" id="dpStart" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_start_date">
+			                            		</div>
+			                            		<div class="col-sm-6">
+			                            			<input class="form-control actual_range" type="text" placeholder="End date" id="dpEnd" data-date-format="yyyy-mm-dd" data-date-autoclose="true" name="event_end_date">
+			                            		</div>
 											</div>
 										</div>
 									</div>
@@ -324,8 +324,8 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('.input-daterange input').each(function() {
-			    $(this).datepicker('clearDates');
+			$('.input-daterange').datepicker({
+			    inputs: $('.actual_range')
 			});
 		});
 	</script>

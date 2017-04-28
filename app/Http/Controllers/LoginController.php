@@ -45,11 +45,16 @@ class LoginController extends Controller {
 
 
     	if(Auth::attempt(['email' => $email, 'password' => $password])){
+            event(new UserCreated(User::where('email',$email)->first()));
             return redirect()->route('dashboard');
         }
     }
 
     public function login(Request $request) {
+
+        if(Auth::check())
+            return redirect()->route('dashboard');
+        
     	$this->validate($request, [
     		'email' => 'required|email|exists:users',
     		'password' => 'required'
@@ -59,7 +64,6 @@ class LoginController extends Controller {
     	$password = $request['password'];
 
     	if(Auth::attempt(['email' => $email, 'password' => $password])){
-            event(new UserCreated(User::where('email',$email)->first()));
     		return redirect()->route('dashboard');
     	}
 
